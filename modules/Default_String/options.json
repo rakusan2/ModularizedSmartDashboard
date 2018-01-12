@@ -1,0 +1,11 @@
+{
+    "name":"String",
+    "version":"1.0.0",
+    "html":"string.html",
+    "js":"string.js",
+    "keys":{
+        "*":{
+            "type":"string"
+        }
+    }
+}

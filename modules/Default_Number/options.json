@@ -1,0 +1,11 @@
+{
+    "name":"Number",
+    "version":"1.0.0",
+    "html":"number.html",
+    "js":"number.js",
+    "keys":{
+        "*":{
+            "type":"number"
+        }
+    }
+}

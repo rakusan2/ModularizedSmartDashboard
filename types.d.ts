@@ -14,8 +14,10 @@ declare interface package {
   onInit?: (key: string, div: HTMLDivElement) => { name: string } | void;
   /** Runs on bots connection change */
   onConnect?: (status: boolean) => any;
-  /** On value change */
+  /** On Value change */
   onValue?: (val: any, key: string) => any;
+  /** On Name change */
+  onName?: (name: string) => any
   /** on key delete */
   onDelete?: (key: string) => any;
 }
@@ -48,13 +50,14 @@ declare interface visibleModule {
 declare interface moduleOptions {
   name: string;
   version: string
-  html?: string;
-  js: string;
+  html?: string | string[];
+  js?: string | string[];
   nodejs?: string
-  css?: string;
+  css?: string | string[];
   keys?: moduleKeys;
   hideName?: boolean
   parent?: boolean | { type?: string, contains?: { [key: string]: { type?: string, val?: any } } }
+  one: boolean
 }
 declare interface sentModule { loc: string, module: moduleOptions, shown?: visibleModule[] }
 declare var pack: package

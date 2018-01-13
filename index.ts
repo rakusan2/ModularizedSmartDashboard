@@ -34,7 +34,8 @@ function createWindow() {
   // When the script starts running in the window set the ready variable
   ipcMain.on("ready", (ev: Event, mesg: {}) => {
     Promise.all([mainOptions, modules]).then(([options, modules]) => {
-
+      sendTo(window,'options',{root:options.root})
+      
       let optionModules = options.modules
       let optModuleNames = optionModules.map(a => a.name)
       let modsInOpt: number[] = []

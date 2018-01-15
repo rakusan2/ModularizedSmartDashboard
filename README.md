@@ -1,5 +1,7 @@
 # Modulerized SmartDashboard
 
+Currently **Nonfunctional**
+
 ## Module
 An isolate frame within the dashboard with code that may be give one or more keys depending on the users use case and the modules requirements
 

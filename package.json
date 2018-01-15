@@ -6,9 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "FIRST",
+    "FRC",
+    "SmartDashboard"
+  ],
+  "author": "Tomas Rakusan",
+  "license": "MIT",
   "dependencies": {
     "electron": "^1.7.10",
     "wpilib-nt-client": "^1.3.1"

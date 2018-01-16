@@ -1,11 +1,16 @@
 {
-    "name":"Boolean",
-    "version":"1.0.0",
-    "html":"boolean.html",
-    "js":"boolean.js",
-    "keys":{
-        "*":{
-            "type":"boolean"
+    "name": "Boolean",
+    "version": "1.0.0",
+    "html": "boolean.html",
+    "js": "boolean.js",
+    "keys": {
+        "*": {
+            "type": "boolean"
         }
-    }
+    },
+    "tx": [
+        {
+            "name": "Value"
+        }
+    ]
 }

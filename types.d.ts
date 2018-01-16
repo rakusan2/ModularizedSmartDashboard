@@ -11,7 +11,7 @@ declare type moduleKeys =
   };
 declare interface modulePackage {
   /** Runs when after module is initialized and before anything else */
-  onInit?: (keys: moduleKeys, div: HTMLDivElement, menu: { [key: string]: any }) => { name: string } | void;
+  onInit?: (keys: string | string[], div: HTMLDivElement, menu: { [key: string]: any }) => { name: string } | void;
   /** Runs on bots connection change */
   onConnect?: (status: boolean, address: string) => any;
   /** On Value change */
@@ -39,7 +39,7 @@ declare interface packageCom {
    * @argument name channel name
    * @argument message channel message
    */
-  sendOn(name: string, message: any): void
+  broadcast(name: string, message: any): void
   /** 
    * Update value
    * 
@@ -62,7 +62,7 @@ declare interface packageCom {
 }
 declare interface mainOptions {
   root: string;
-  size: {
+  size?: {
     height: number;
     width: number;
   };
@@ -83,14 +83,14 @@ declare interface visibleModule {
     x: number;
     y: number;
   };
-  menu:{
-    [key:string]:any
+  menu: {
+    [key: string]: any
   }
-  transmitters?:{
-    [key:string]:string
+  transmitters?: {
+    [key: string]: string
   }
-  receivers?:{
-    [key:string]:string
+  receivers?: {
+    [key: string]: string
   }
   force: boolean;
 }
@@ -153,18 +153,20 @@ declare interface moduleOptions {
     /** Min Value if supported */
     max?: number
   }[]
-  /** Module Communication */
-  com?: {
-    /** Channel Name */
-    name?: string
-    /** Is this a Transmit channel */
-    send?: boolean
-    /** Is it required */
-    required?: boolean
+  /** Module Receivers */
+  rx:{
+    name:string
+    required:boolean
+  }[],
+  /** Module Transmitters */
+  tx:{
+    name:string
+    required:boolean
   }[]
 }
 declare interface sentModule { loc: string, module: moduleOptions, shown?: visibleModule[] }
 declare var pack: modulePackage
+declare var com: packageCom
 
 interface normalMessage {
   from: string,

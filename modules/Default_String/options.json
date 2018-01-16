@@ -7,5 +7,10 @@
         "*":{
             "type":"string"
         }
-    }
+    },
+    "tx": [
+        {
+            "name": "Value"
+        }
+    ]
 }

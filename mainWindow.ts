@@ -8,6 +8,7 @@ ipc.send("ready");
 
 ipc.addListener('modules', (ev: Event, modules: sentModule[]) => {
 
+
 })
 ipc.addListener('options', (ev: Event, mesg: { root?: string }) => {
     if (typeof mesg.root === "string") {
@@ -102,6 +103,14 @@ function firstChildLoc(children: ntNode[], name: string){
         if (children[i].name == name) return i
     }
     return -1
+}
+
+function addModule(name:string,html:string,css?:string[],js?:string[]){
+    let frame = document.createElement('iframe')
+    let head = document.createElement('head')
+    let body = document.createElement('body')
+    body.innerHTML = html
+    frame.contentDocument.appendChild(body)
 }
 
 interface ntMesg {

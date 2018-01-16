@@ -6,7 +6,7 @@ Currently **Nonfunctional**
 An isolate frame within the dashboard with code that may be give one or more keys depending on the users use case and the modules requirements
 
 ### Requirement
-Each frame requires an [options.json](#options.json) file and an HTML file, JS file, or both.
+Each frame requires an [options.json](#optionsjson) file and an HTML file, JS file, or both.
 
 [PUG](https://pugjs.org/api/getting-started.html) or [TS](https://www.typescriptlang.org/) files are also acceptable
 
